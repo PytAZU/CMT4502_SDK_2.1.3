@@ -1,0 +1,8 @@
+**/bin
+**/Listings
+**/Objects
+*.scvd
+*.uvguix.user
+*.uvoptx
+JLinkLog.txt
+JLinkSettings.ini
