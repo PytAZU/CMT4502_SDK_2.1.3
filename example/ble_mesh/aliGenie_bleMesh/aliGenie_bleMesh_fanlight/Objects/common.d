@@ -1,0 +1,15 @@
+.\objects\common.o: ..\..\..\..\components\driver\common\common.c
+.\objects\common.o: ..\..\..\..\components\inc\types.h
+.\objects\common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\common.o: ..\..\..\..\components\driver\common\common.h
+.\objects\common.o: ..\..\..\..\components\inc\ap_cp.h
+.\objects\common.o: ..\..\..\..\components\ethermind\utils\include\ARMCM0.h
+.\objects\common.o: ..\..\..\..\components\ethermind\utils\include\core_cm0.h
+.\objects\common.o: ..\..\..\..\components\ethermind\utils\include\core_cmInstr.h
+.\objects\common.o: ..\..\..\..\components\ethermind\utils\include\core_cmFunc.h
+.\objects\common.o: ..\..\..\..\components\ethermind\utils\include\system_ARMCM0.h
+.\objects\common.o: ..\..\..\..\components\osal\include\OSAL_Memory.h
+.\objects\common.o: ..\..\..\..\components\osal\include\comdef.h
+.\objects\common.o: ..\..\..\..\components\common\hal_defs.h
+.\objects\common.o: ..\..\..\..\components\common\hal_mcu.h

@@ -1,0 +1,15 @@
+.\objects\my_printf.o: ..\..\..\..\components\driver\log\my_printf.c
+.\objects\my_printf.o: ..\..\..\..\components\inc\types.h
+.\objects\my_printf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\my_printf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\my_printf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\my_printf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\my_printf.o: ..\..\..\..\components\driver\uart\uart.h
+.\objects\my_printf.o: ..\..\..\..\components\driver\gpio\gpio.h
+.\objects\my_printf.o: ..\..\..\..\components\inc\ap_cp.h
+.\objects\my_printf.o: ..\..\..\..\components\ethermind\utils\include\ARMCM0.h
+.\objects\my_printf.o: ..\..\..\..\components\ethermind\utils\include\core_cm0.h
+.\objects\my_printf.o: ..\..\..\..\components\ethermind\utils\include\core_cmInstr.h
+.\objects\my_printf.o: ..\..\..\..\components\ethermind\utils\include\core_cmFunc.h
+.\objects\my_printf.o: ..\..\..\..\components\ethermind\utils\include\system_ARMCM0.h
+.\objects\my_printf.o: ..\..\..\..\components\driver\log\log.h

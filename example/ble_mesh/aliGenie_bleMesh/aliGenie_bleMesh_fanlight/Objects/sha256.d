@@ -1,0 +1,17 @@
+.\objects\sha256.o: ..\..\..\..\components\ethermind\external\crypto\sha256\sha256.c
+.\objects\sha256.o: ..\..\..\..\components\ethermind\external\crypto\sha256\sha256.h
+.\objects\sha256.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\sha256.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sha256.o: ..\..\..\..\components\driver\flash\flash.h
+.\objects\sha256.o: ..\..\..\..\components\inc\types.h
+.\objects\sha256.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\sha256.o: ..\..\..\..\components\driver\gpio\gpio.h
+.\objects\sha256.o: ..\..\..\..\components\inc\ap_cp.h
+.\objects\sha256.o: ..\..\..\..\components\ethermind\utils\include\ARMCM0.h
+.\objects\sha256.o: ..\..\..\..\components\ethermind\utils\include\core_cm0.h
+.\objects\sha256.o: ..\..\..\..\components\ethermind\utils\include\core_cmInstr.h
+.\objects\sha256.o: ..\..\..\..\components\ethermind\utils\include\core_cmFunc.h
+.\objects\sha256.o: ..\..\..\..\components\ethermind\utils\include\system_ARMCM0.h
+.\objects\sha256.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\sha256.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\sha256.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

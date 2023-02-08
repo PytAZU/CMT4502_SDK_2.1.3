@@ -1,0 +1,11 @@
+.\objects\aligenie_blemesh_main.o: ..\aliGenie_bleMesh\appl_base\aliGenie_bleMesh_Main.c
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\osal\include\OSAL.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\osal\include\comdef.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\inc\types.h
+.\objects\aligenie_blemesh_main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\aligenie_blemesh_main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\common\hal_defs.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\osal\include\OSAL_Memory.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\osal\include\OSAL_Timers.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\osal\include\OSAL_Tasks.h
+.\objects\aligenie_blemesh_main.o: ..\..\..\..\components\osal\include\OSAL_PwrMgr.h
