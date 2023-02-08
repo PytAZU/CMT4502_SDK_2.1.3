@@ -316,7 +316,7 @@ void SimpleBLEPeripheral_Init( uint8 task_id )
 
     //LL_PLUS_LoadMACFromFlash(0x5070);
     //pplus_LoadMACFromChipMAddr();
-	LL_PLUS_SetScanRequestFilterCB(simpleBLEPeripheral_ScanRequestFilterCBack);
+	//LL_PLUS_SetScanRequestFilterCB(simpleBLEPeripheral_ScanRequestFilterCBack);
 	//LL_PLUS_SetScanRequestFilterCB(simpleBLEPeripheral_MasterRssiScanCBack);
     
     // Setup the GAP
@@ -349,10 +349,10 @@ void SimpleBLEPeripheral_Init( uint8 task_id )
 		};
 
 
-        uint8 advType =g_current_advType;// LL_ADV_NONCONNECTABLE_UNDIRECTED_EVT;//LL_ADV_SCANNABLE_UNDIRECTED_EVT;//LL_ADV_CONNECTABLE_LDC_DIRECTED_EVT;//;    // it seems a  bug to set GAP_ADTYPE_ADV_NONCONN_IND = 0x03
+        uint8 advType = GAP_ADTYPE_ADV_NONCONN_IND;
         GAPRole_SetParameter( GAPROLE_ADV_EVENT_TYPE, sizeof( uint8 ), &advType );
         
-        GAPRole_SetParameter(GAPROLE_ADV_DIRECT_ADDR, sizeof(peerPublicAddr), peerPublicAddr);
+        //GAPRole_SetParameter(GAPROLE_ADV_DIRECT_ADDR, sizeof(peerPublicAddr), peerPublicAddr);
         // set adv channel map
         GAPRole_SetParameter(GAPROLE_ADV_CHANNEL_MAP, sizeof(uint8), &advChnMap);        
 
@@ -367,30 +367,31 @@ void SimpleBLEPeripheral_Init( uint8 task_id )
 #endif
         GAPRole_SetParameter( GAPROLE_ADVERT_OFF_TIME, sizeof( uint16 ), &gapRole_AdvertOffTime );
 
-        GAPRole_SetParameter( GAPROLE_SCAN_RSP_DATA, sizeof ( scanRspData ), scanRspData );
+        //GAPRole_SetParameter( GAPROLE_SCAN_RSP_DATA, sizeof ( scanRspData ), scanRspData );
         GAPRole_SetParameter( GAPROLE_ADVERT_DATA, sizeof( advertData ), advertData );
 
-        GAPRole_SetParameter( GAPROLE_PARAM_UPDATE_ENABLE, sizeof( uint8 ), &enable_update_request );
-        GAPRole_SetParameter( GAPROLE_MIN_CONN_INTERVAL, sizeof( uint16 ), &desired_min_interval );
-        GAPRole_SetParameter( GAPROLE_MAX_CONN_INTERVAL, sizeof( uint16 ), &desired_max_interval );
-        GAPRole_SetParameter( GAPROLE_SLAVE_LATENCY, sizeof( uint16 ), &desired_slave_latency );
-        GAPRole_SetParameter( GAPROLE_TIMEOUT_MULTIPLIER, sizeof( uint16 ), &desired_conn_timeout );
+        //GAPRole_SetParameter( GAPROLE_PARAM_UPDATE_ENABLE, sizeof( uint8 ), &enable_update_request );
+        //GAPRole_SetParameter( GAPROLE_MIN_CONN_INTERVAL, sizeof( uint16 ), &desired_min_interval );
+        //GAPRole_SetParameter( GAPROLE_MAX_CONN_INTERVAL, sizeof( uint16 ), &desired_max_interval );
+        //GAPRole_SetParameter( GAPROLE_SLAVE_LATENCY, sizeof( uint16 ), &desired_slave_latency );
+        //GAPRole_SetParameter( GAPROLE_TIMEOUT_MULTIPLIER, sizeof( uint16 ), &desired_conn_timeout );
     }
 
     // Set the GAP Characteristics
-    GGS_SetParameter( GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName );
+    //GGS_SetParameter( GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName );
 
     // Set advertising interval
     {
         uint16 advInt = 800;//1600;   // actual time = advInt * 625us
 
-        GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, advInt );
-        GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, advInt );
+        //GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, advInt );
+        //GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, advInt );
         GAP_SetParamValue( TGAP_GEN_DISC_ADV_INT_MIN, advInt );
         GAP_SetParamValue( TGAP_GEN_DISC_ADV_INT_MAX, advInt );
     }
   // Setup the GAP Bond Manager, add 2017-11-15
   {
+		/*
     uint32 passkey = DEFAULT_PASSCODE;//0; // passkey "000000"
     uint8 pairMode = GAPBOND_PAIRING_MODE_WAIT_FOR_REQ;
     uint8 mitm = TRUE;
@@ -405,13 +406,14 @@ void SimpleBLEPeripheral_Init( uint8 task_id )
     GAPBondMgr_SetParameter( GAPBOND_MITM_PROTECTION, sizeof ( uint8 ), &mitm );
     GAPBondMgr_SetParameter( GAPBOND_IO_CAPABILITIES, sizeof ( uint8 ), &ioCap );
     GAPBondMgr_SetParameter( GAPBOND_BONDING_ENABLED, sizeof ( uint8 ), &bonding );
+		*/
   }
     // Initialize GATT attributes
-    GGS_AddService( GATT_ALL_SERVICES );            // GAP
+    //GGS_AddService( GATT_ALL_SERVICES );            // GAP
     GATTServApp_AddService( GATT_ALL_SERVICES );    // GATT attributes
-    DevInfo_AddService();                           // Device Information Service
-    SimpleProfile_AddService( GATT_ALL_SERVICES );  // Simple GATT Profile
-
+    //DevInfo_AddService();                           // Device Information Service
+    //SimpleProfile_AddService( GATT_ALL_SERVICES );  // Simple GATT Profile
+/*
     // Setup the SimpleProfile Characteristic Values
     {
         uint8  uuid_setting[IBEACON_UUID_LEN] = {
@@ -462,6 +464,7 @@ void SimpleBLEPeripheral_Init( uint8 task_id )
     sbp_uart_init();
     cli_init();
 #endif
+*/
     // Setup a delayed profile startup
     osal_set_event( simpleBLEPeripheral_TaskID, SBP_START_DEVICE_EVT );
 
@@ -512,10 +515,10 @@ uint16 SimpleBLEPeripheral_ProcessEvent( uint8 task_id, uint16 events )
         VOID GAPRole_StartDevice( &simpleBLEPeripheral_PeripheralCBs );
 
     // Start Bond Manager, 2017-11-15
-    VOID GAPBondMgr_Register( &simpleBLEPeripheral_BondMgrCBs );
+    //VOID GAPBondMgr_Register( &simpleBLEPeripheral_BondMgrCBs );
 
         // Set timer for first periodic event
-        osal_start_timerEx( simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD );
+        //osal_start_timerEx( simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD );
 
         return ( events ^ SBP_START_DEVICE_EVT );
     }
@@ -834,13 +837,13 @@ static void peripheralStateNotificationCB( gaprole_States_t newState )
 
 
             osal_memcpy(&str_addr[0],bdAddr2Str(ownAddress),14);
-            osal_memcpy(&scanRspData[11],&str_addr[6],8);
-            osal_memcpy(&attDeviceName[9],&str_addr[6],8);
+            //osal_memcpy(&scanRspData[11],&str_addr[6],8);
+            //osal_memcpy(&attDeviceName[9],&str_addr[6],8);
         
 
-            GAPRole_SetParameter( GAPROLE_SCAN_RSP_DATA, sizeof ( scanRspData ), scanRspData );
+            //GAPRole_SetParameter( GAPROLE_SCAN_RSP_DATA, sizeof ( scanRspData ), scanRspData );
             // Set the GAP Characteristics
-            GGS_SetParameter( GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName );
+            //GGS_SetParameter( GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName );
 #ifdef CLI_ROLE
             // uint8 initial_advertising_enable = TRUE;//true
             // GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &initial_advertising_enable );
