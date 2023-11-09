@@ -46,6 +46,7 @@
 #include "flash.h"
 #include "ap_timer.h"
 #include "OSAL_Memory.h"
+#include "config.h"
 
 #define DEFAULT_UART_BAUD   115200
 
@@ -73,7 +74,7 @@ static void rf_wakeup_handler(void){
 static void hal_rfphy_init(void)
 {
     //============config the txPower
-    g_rfPhyTxPower  = RF_PHY_TX_POWER_0DBM ;
+    g_rfPhyTxPower  = BLE_RF_TX_POWER;
     //============config BLE_PHY TYPE
     g_rfPhyPktFmt   = PKT_FMT_BLE1M;
     
