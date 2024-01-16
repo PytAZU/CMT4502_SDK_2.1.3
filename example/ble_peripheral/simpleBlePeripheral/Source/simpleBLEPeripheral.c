@@ -35,8 +35,8 @@ static uint8 iBeaconAdvData[] =
     GAP_ADTYPE_FLAGS_GENERAL | GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED,
     0x1A, // length of data
     GAP_ADTYPE_MANUFACTURER_SPECIFIC, // manufacturer specific adv data type
-    0xFF, // Company ID
-    0xFF, // Company ID
+    0x4C, // Company ID
+    0x00, // Company ID
     0x02, // Data Type
     0x15, // Data Length
     0xBC, // UUID
