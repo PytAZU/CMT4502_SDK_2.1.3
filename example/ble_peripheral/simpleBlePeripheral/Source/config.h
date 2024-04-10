@@ -6,7 +6,7 @@
  * Device unique 16-bit identifier.
  * It is used as a "minor" in iBeacon data and 2 low bytes of BLE MAC.
  */
-#define DEVICE_ID_16BITS    (uint16_t)1
+#define DEVICE_ID_16BITS    (uint16_t)5
 #define DEVICE_ID_LSB       (uint8_t)(DEVICE_ID_16BITS & 0xFF)
 #define DEVICE_ID_MSB       (uint8_t)((DEVICE_ID_16BITS >> 8) & 0xFF)
 

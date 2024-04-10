@@ -6,7 +6,7 @@
   IMPORTANT: All rights of this software belong to Wuxi CMOSTEK Microelectronics Co 
   Limited ("CMOSTEK"). Your use of this Software is limited to those 
   specific rights granted under  the terms of the business contract, the 
-  confidential agreement, the non-disclosure agreement and any other forms 
+  confidential agreement, thhal_rtc_clock_confige non-disclosure agreement and any other forms
   of agreements as a customer or a partner of CMOSTEK. You may not use this 
   Software unless you agree to abide by the terms of these agreements. 
   You acknowledge that the Software may not be modified, copied, 
